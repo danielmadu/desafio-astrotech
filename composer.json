@@ -1,0 +1,17 @@
+{
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4",
+        "friendsofphp/php-cs-fixer": "^3.37"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "scripts": {
+        "test": "docker-compose exec php ./vendor/bin/phpunit -c phpunit.xml tests --coverage-html ./report"
+    }
+}

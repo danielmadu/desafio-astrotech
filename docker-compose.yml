@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+    php:
+        build: ./.docker/php
+        container_name: desafio_php
+        volumes:
+            - .:/var/www/html
+            - ./.docker/config/php/from-docker-configuration.ini:/usr/local/etc/php/conf.d/project-configuration.ini
+        networks:
+            - net_services
+
+networks:
+    net_services:
+        name: net_services
+        driver: bridge
